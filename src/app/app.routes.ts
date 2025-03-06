@@ -12,11 +12,15 @@ export const routes: Routes = [
   },
   {
     path: 'sobre',
-    component: SobreComponent
+    loadComponent: () => import('./pages/sobre/sobre.component').then(
+      (c) => c.SobreComponent
+    )
   },
   {
     path: 'contato',
-    component: ContatoComponent
+    loadComponent: () => import('./pages/contato/contato.component').then(
+      (c) => c.ContatoComponent
+    )
   },
   {
     path: '',
